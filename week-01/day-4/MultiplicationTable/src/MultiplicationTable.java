@@ -20,9 +20,10 @@ public class MultiplicationTable {
         Scanner sc = new Scanner(System.in);
         System.out.println("Type a number and i give you that numbers multiplication table!");
         int userInput1 = sc.nextInt();
-        int a = 0;
-        while (a < 10) {
-            System.out.println(a +  " * " + userInput1 + " = "   );
+        int a = 1;
+        while (a <= 10) {
+            System.out.println(a + " * " + userInput1 + " = " + (a * userInput1));
+            a++;
         }
     }
 }
