@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e073023e-749c-4a47-bfbb-4602914e8b6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Bmi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Bmi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MultiplicationTable/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MultiplicationTable/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,9 +15,10 @@
     <session id="-858798416">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,7 +51,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PartyIndicator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-89">
+            <state relative-caret-position="21">
               <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
             </state>
           </provider>
@@ -82,7 +82,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -92,22 +92,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="PartyIndicator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PartyIndicator" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -154,14 +139,15 @@
       <updated>1533220741452</updated>
       <workItem from="1533220743019" duration="2450000" />
       <workItem from="1533235509098" duration="183000" />
+      <workItem from="1533287731891" duration="34000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2633000" />
+    <option name="totallyTimeSpent" value="2667000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="676" y="0" width="697" height="735" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24960753" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -202,7 +188,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/PartyIndicator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89">
+        <state relative-caret-position="21">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
