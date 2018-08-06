@@ -30,6 +30,7 @@ public class DrawSquare {
                 } else {
 
                     System.out.print(" ");
+                    
                 }
             }
         }
