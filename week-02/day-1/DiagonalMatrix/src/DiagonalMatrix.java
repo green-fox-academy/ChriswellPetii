@@ -18,9 +18,15 @@ public class DiagonalMatrix {
     public static void number(int[] a) {
 
         for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i]);
+            for (int j = 0; j < a.length; j++)
+                if (i == j) {
+                    System.out.print(a[0]);
+                } else System.out.print(a[1]);
+            System.out.println();
         }
-    }
 
+    }
 }
+
+
 
