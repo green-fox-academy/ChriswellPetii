@@ -12,17 +12,19 @@ public class PrintParams {
         // printParams("first", "second")
         // printParams("first", "second", "third", "fourth")
 
-        String[] a = {"first", "second", "third", "fourth"};
-
-        printParams(a);
+        printParams("first");
+        printParams("first", "second");
+        printParams("first", "second", "third");
+        printParams("first", "second", "third", "fourth");
 
     }
 
-    public static void printParams(String[] a) {
+    public static void printParams(String... args) {
 
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] +" ");
+        for (String arg : args) {
+            System.out.print(arg + " ");
         }
+        System.out.println();
 
     }
 }
