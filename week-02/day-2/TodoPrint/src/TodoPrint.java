@@ -14,7 +14,7 @@ public class TodoPrint {
         //  - Buy milk
         //  - Download games
         //      - Diablo
-        String DG = " - Dowonload games";
+        String DG = " - Download games";
         String DGD = " - Diablo";
         String[] todoTextArray;
         String newTodoText = "";
