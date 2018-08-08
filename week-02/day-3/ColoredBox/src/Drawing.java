@@ -6,15 +6,24 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Drawing {
     public static void mainDraw(Graphics graphics) {
-        // draw a red horizontal line to the canvas' middle.
-        // draw a green vertical line to the canvas' middle.
+        // Draw a box that has different colored lines on each edge.
+        int x = 10;
+        int y = 10;
+        int a = 50;
+        drawColoredBox(graphics, x, y, a);
+
+
+    }
+
+    public static void drawColoredBox(Graphics graphics, int x, int y, int a) {
         graphics.setColor(Color.RED);
-        graphics.drawLine(0, 0, (HEIGHT / 2), 0);
-
-
+        graphics.drawLine(x, y, x + a, y);
         graphics.setColor(Color.GREEN);
-        graphics.drawLine(0, 0, 0, (WIDTH / 2));
-
+        graphics.drawLine(x + a, y, x + a, y + a);
+        graphics.setColor(Color.YELLOW);
+        graphics.drawLine(x + a, y + a, x, y + a);
+        graphics.setColor(Color.BLUE);
+        graphics.drawLine(x, y + a, x, y);
     }
 
     // Don't touch the code below
