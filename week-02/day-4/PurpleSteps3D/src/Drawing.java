@@ -6,23 +6,26 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Drawing {
     public static void mainDraw(Graphics graphics) {
-        int sS = 10;
-        int pieces = 19;
+        int size = 10;
         int i;
+        int pieces = 6;
         // Reproduce this:
         // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
-        drawSquare(graphics, sS, pieces);
-
+        draw3DSquare(graphics, size, pieces);
     }
 
-    private static void drawSquare(Graphics graphics, int sS, int pieces) {
+    private static void draw3DSquare(Graphics graphics, int size, int pieces) {
         int i;
-        for (i = 0; i < pieces; i++) {
+        for (i = 0; i <= pieces; i++) {
+            int startPoint = ((i * size) * (i - 1) / 2);
 
             graphics.setColor(Color.magenta);
-            graphics.fillRect(i * sS, i * sS, sS, sS);
-            graphics.setColor(Color.BLACK);
-            graphics.drawRect(i * sS, i * sS, sS, sS);
+            graphics.fillRect(((i * size) * (i - 1) / 2), ((i * size) * (i - 1) / 2), i * size, i * size);
+
+            graphics.setColor(Color.black);
+            graphics.drawRect(((i * size) * (i - 1) / 2), ((i * size) * (i - 1) / 2), i * size, i * size);
+
+
         }
     }
 
