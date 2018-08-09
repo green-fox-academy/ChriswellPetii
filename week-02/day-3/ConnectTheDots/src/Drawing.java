@@ -10,7 +10,7 @@ public class Drawing {
         int[][] xyStartPoints = {{10, 10}, {290, 10}, {290, 290}, {10, 290}};
         int i = 0;
         int k = 0;
-        
+
         // Create a function that takes 1 parameter:
         // An array of {x, y} points
         // and connects them with green lines.
