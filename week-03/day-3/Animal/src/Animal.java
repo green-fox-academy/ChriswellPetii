@@ -4,12 +4,12 @@ public class Animal {
 
     void eat() {
         this.hunger = 50;
-        this.hunger++;
+        this.hunger--;
     }
 
     void drink() {
         this.thirst = 50;
-        this.thirst++;
+        this.thirst--;
     }
 
     void play() {
