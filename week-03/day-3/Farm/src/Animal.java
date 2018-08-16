@@ -20,8 +20,8 @@ public class Animal {
     }
 
     void play() {
-        this.thirst--;
-        modifyHunger();
+        this.thirst++;
+        this.hunger++;
     }
 
     private void modifyHunger() {
