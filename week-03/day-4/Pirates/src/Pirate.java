@@ -27,6 +27,7 @@ public class Pirate {
         }
         return counter;
     }
+
     void drinkSomeRum(int i) {
         this.rums += i;
         setState();

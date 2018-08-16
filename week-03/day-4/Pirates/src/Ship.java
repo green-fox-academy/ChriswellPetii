@@ -5,7 +5,6 @@ public class Ship {
     static List<Pirate> pirates = new ArrayList<>();
     int random = (int) Math.ceil(Math.random() * 100);
     int captainsRums = (int) Math.ceil(Math.random() * 10);
-    //    int alivePirates = Pirate.numberOfAlivePirates();
     int shipScore;
 
     Ship() {

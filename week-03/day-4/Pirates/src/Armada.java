@@ -3,7 +3,6 @@ import java.util.List;
 
 public class Armada {
     List<Ship> ships = new ArrayList<>();
-    int random = (int) Math.ceil(Math.random() * 10);
 
     Armada() {
         ships.clear();

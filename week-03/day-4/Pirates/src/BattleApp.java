@@ -7,7 +7,6 @@ public class BattleApp {
             System.out.println("James win");
         } else {
             System.out.println("Nessy win");
-
         }
     }
 }

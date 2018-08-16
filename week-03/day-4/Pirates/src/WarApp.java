@@ -3,9 +3,9 @@ public class WarApp {
         Armada France = new Armada();
         Armada Spain = new Armada();
 
-        if (Spain.war(France)){
+        if (Spain.war(France)) {
             System.out.println("Spain win!");
-        }else {
+        } else {
             System.out.println("France win!");
         }
     }
