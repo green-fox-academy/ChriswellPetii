@@ -16,16 +16,16 @@ public class Animal {
     }
 
     void drink() {
-        this.thirst++;
+        this.thirst--;
     }
 
     void play() {
-        this.thirst++;
+        this.thirst--;
         modifyHunger();
     }
 
     private void modifyHunger() {
-        this.hunger++;
+        this.hunger--;
         Farm.listOfHungriness.set(Farm.listOfAnimals.indexOf(this.name), this.hunger);
     }
 }

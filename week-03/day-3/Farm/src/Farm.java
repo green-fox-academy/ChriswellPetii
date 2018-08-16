@@ -7,7 +7,7 @@ public class Farm {
 
 
     static void slaughter() {
-        int minIndex = listOfHungriness.indexOf(Collections.min(listOfHungriness));
-        listOfAnimals.remove(listOfAnimals.get(minIndex));
+        int maxIndex = listOfHungriness.indexOf(Collections.max(listOfHungriness));
+        listOfAnimals.remove(listOfAnimals.get(maxIndex));
     }
 }
