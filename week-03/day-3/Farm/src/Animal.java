@@ -1,19 +1,31 @@
 public class Animal {
+    String name;
     int hunger;
     int thirst;
 
-    void eat() {
+    Animal(String name) {
+        this.name = name;
+        Farm.listOfAnimals.add(name);
         this.hunger = 50;
-        this.hunger++;
+        Farm.listOfHungriness.add(this.hunger);
+        this.thirst = 50;
+    }
+
+    void eat() {
+        modifyHunger();
     }
 
     void drink() {
-        this.thirst = 50;
         this.thirst++;
     }
 
     void play() {
         this.thirst++;
+        modifyHunger();
+    }
+
+    private void modifyHunger() {
         this.hunger++;
+        Farm.listOfHungriness.set(Farm.listOfAnimals.indexOf(this.name), this.hunger);
     }
 }
