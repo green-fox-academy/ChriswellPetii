@@ -1,7 +1,7 @@
 public class Person {
-    String name;
-    int age;
-    String gender;
+    private String name;
+    private int age;
+    private String gender;
 
     Person(String name, int age, String gender) {
         this.name = name;
@@ -21,5 +21,17 @@ public class Person {
 
     public void getGoal() {
         System.out.println("My goal is: Live for the moment!");
+    }
+
+    String getName() {
+        return this.name;
+    }
+
+    int getAge() {
+        return this.age;
+    }
+
+    String getGender() {
+        return this.gender;
     }
 }

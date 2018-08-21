@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class Cohort {
-    String name;
-    ArrayList<Student> students = new ArrayList<>();
-    ArrayList<Mentor> mentors = new ArrayList<>();
+    private String name;
+    private ArrayList<Student> students = new ArrayList<>();
+    private ArrayList<Mentor> mentors = new ArrayList<>();
 
     Cohort(String name) {
         this.students.clear();

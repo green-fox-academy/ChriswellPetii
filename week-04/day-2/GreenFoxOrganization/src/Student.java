@@ -1,6 +1,6 @@
 public class Student extends Person {
-    String previousOrganization;
-    int skippedDays;
+    private String previousOrganization;
+    private int skippedDays;
 
     Student() {
         super();
@@ -18,7 +18,7 @@ public class Student extends Person {
     }
 
     public void introduce() {
-        System.out.println("Hi, I'm " + this.name + ", a " + this.age + " year old " + this.gender + " from " + this.previousOrganization + " who skipped " + this.skippedDays + " days from the course already.");
+        System.out.println("Hi, I'm " + getName() + ", a " + getAge() + " year old " + getGender() + " from " + this.previousOrganization + " who skipped " + this.skippedDays + " days from the course already.");
 
     }
 

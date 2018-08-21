@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Mentor extends Person {
-    String level;
+    private String level;
 
     Mentor(String name, int age, String gender, String level) {
         super(name, age, gender);
@@ -19,6 +19,6 @@ public class Mentor extends Person {
     }
 
     public void introduce() {
-        System.out.println("Hi, I'm " + this.name + ", a " + this.age + " year old " + this.gender + " " + this.level + " mentor.");
+        System.out.println("Hi, I'm " + getName() + ", a " + getAge() + " year old " + getGender() + " " + this.level + " mentor.");
     }
 }
