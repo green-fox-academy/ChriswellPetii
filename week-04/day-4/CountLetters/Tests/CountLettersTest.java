@@ -27,7 +27,7 @@ public class CountLettersTest {
         exLetters.put("d", 1);
         exLetters.put("a", 2);
     }
-    
+
     @Test
     public void valami() {
         assertThat(exLetters, is(letters));

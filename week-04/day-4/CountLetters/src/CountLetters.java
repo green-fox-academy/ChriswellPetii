@@ -1,28 +1,28 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class CountLetters {
+class CountLetters {
     private String s1;
     private Map<String, Integer> letters = new HashMap<>();
     private String[] keys;
 
-    public CountLetters(String s1) {
+    CountLetters(String s1) {
         this.s1 = s1;
     }
 
-    public String[] keyMaker() {
+    String[] keyMaker() {
         keys = s1.split("");
         return keys;
     }
 
-    public void setMap() {
+    void setMap() {
         for (int i = 0; i < keys.length; i++) {
             letters.put(keys[i], occurrencesCounter(i));
 
         }
     }
 
-    public int occurrencesCounter(int i) {
+    private int occurrencesCounter(int i) {
         int occurrences = 0;
         for (String key : keys) {
             if (keys[i].equals(key)) {
@@ -32,11 +32,11 @@ public class CountLetters {
         return occurrences;
     }
 
-    public Map<String, Integer> getLetters() {
+    Map<String, Integer> getLetters() {
         return letters;
     }
 
-    public String[] getKeys() {
+    String[] getKeys() {
         return keys;
     }
 }
