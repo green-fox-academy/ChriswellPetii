@@ -5,19 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileWriter {
-    public void writeTasks(List<Task> tasks) {
+    public void writeTasks(List<Todo> todos) {
         try {
-            Files.write(Paths.get(FileReader.filename), serializeTasks(tasks));
+            Files.write(Paths.get(FileReader.filename), serializeTasks(todos));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private List<String> serializeTasks(List<Task> tasks) {
+    private List<String> serializeTasks(List<Todo> todos) {
         List<String> result = new ArrayList<>();
 
-        for (Task task : tasks) {
-            result.add(String.format("%s;%s;%s", task.getId(), task.getName(), task.isDone()));
+        for (Todo todo : todos) {
+            String asd = String.format("%s;%s;%s;%s;%s", todo.getId(), todo.getName(), todo.isDone(), todo.getCreatedAt(), todo.getCompletedAt());
+            result.add(asd);
         }
 
         return result;

@@ -9,71 +9,71 @@ public class TaskRepo {
         writer = new FileWriter();
     }
 
-    public List<Task> findAll() {
+    public List<Todo> findAll() {
         return reader.load();
     }
 
-    public void add(Task task) {
-        List<Task> tasks = findAll();
+    public void add(Todo todo) {
+        List<Todo> todos = findAll();
 
-        long nextId = findNextId(tasks);
-        tasks.add(task.withId(nextId));
+        long nextId = findNextId(todos);
+        todos.add(todo.withId(nextId));
 
-        save(tasks);
+        save(todos);
     }
 
-    public Task findById(long id) {
-        List<Task> tasks = findAll();
-        Task taskFound = null;
+    public Todo findById(long id) {
+        List<Todo> todos = findAll();
+        Todo todoFound = null;
 
-        for (Task task : tasks) {
-            if (task.getId() == id) {
-                taskFound = task;
+        for (Todo todo : todos) {
+            if (todo.getId() == id) {
+                todoFound = todo;
             }
         }
 
-        return taskFound;
+        return todoFound;
     }
 
-    public void save(Task task) {
-        List<Task> tasks = findAll();
+    public void save(Todo todo) {
+        List<Todo> todos = findAll();
 
-        for (int i = 0; i < tasks.size(); i++) {
-            if (tasks.get(i).equals(task)) {
-                tasks.remove(i);
-                tasks.add(i, task);
+        for (int i = 0; i < todos.size(); i++) {
+            if (todos.get(i).equals(todo)) {
+                todos.remove(i);
+                todos.add(i, todo);
             }
         }
 
-        save(tasks);
+        save(todos);
     }
 
-    public void remove(Task task) {
-        List<Task> tasks = findAll();
+    public void remove(Todo todo) {
+        List<Todo> todos = findAll();
 
-        for (int i = 0; i < tasks.size(); i++) {
-            if (tasks.get(i).equals(task)) {
-                tasks.remove(i);
+        for (int i = 0; i < todos.size(); i++) {
+            if (todos.get(i).equals(todo)) {
+                todos.remove(i);
                 i--;
             }
         }
 
-        save(tasks);
+        save(todos);
     }
 
-    private long findNextId(List<Task> tasks) {
+    private long findNextId(List<Todo> todos) {
         long largestID = 0;
 
-        for (Task task : tasks) {
-            if (task.getId() > largestID) {
-                largestID = task.getId();
+        for (Todo todo : todos) {
+            if (todo.getId() > largestID) {
+                largestID = todo.getId();
             }
         }
 
         return largestID + 1;
     }
 
-    private void save(List<Task> tasks) {
-        writer.writeTasks(tasks);
+    private void save(List<Todo> todos) {
+        writer.writeTasks(todos);
     }
 }

@@ -1,8 +1,8 @@
 public class TodoApp {
-    private final TaskOperations TaskOperations;
+    private final TaskOperations taskOperations;
 
     TodoApp() {
-        this.TaskOperations = new TaskOperations();
+        this.taskOperations = new TaskOperations();
     }
 
     public void run(String[] args) {
@@ -12,7 +12,7 @@ public class TodoApp {
         }
 
         if (args[0].equals("-l")) {
-            TaskOperations.listAll();
+            taskOperations.listAll();
             return;
         }
 
@@ -22,7 +22,7 @@ public class TodoApp {
                 return;
             }
 
-            TaskOperations.addTask(args[1]);
+            taskOperations.addTask(args[1]);
             return;
         }
 
@@ -33,7 +33,7 @@ public class TodoApp {
             }
 
             try {
-                TaskOperations.doneTask(Integer.parseInt(args[1]));
+                taskOperations.doneTodo(Integer.parseInt(args[1]));
             } catch (NumberFormatException e) {
                 System.out.println("Unable to check: index is not a number");
             } catch (IndexOutOfBoundsException e) {
@@ -49,7 +49,7 @@ public class TodoApp {
             }
 
             try {
-                TaskOperations.removeTask(Integer.parseInt(args[1]));
+                taskOperations.removeTask(Integer.parseInt(args[1]));
             } catch (NumberFormatException e) {
                 System.out.println("Unable to remove: index is not a number");
             }
