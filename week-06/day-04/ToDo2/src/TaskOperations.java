@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.util.List;
 
 public class TaskOperations {
@@ -21,7 +20,6 @@ public class TaskOperations {
         if (todo == null) {
             throw new IndexOutOfBoundsException();
         }
-        todo.setCompletedAt(LocalDateTime.now());
         taskRepo.save(todo.asDone());
     }
 
@@ -38,5 +36,15 @@ public class TaskOperations {
         for (Todo todo : todos) {
             System.out.println(todo);
         }
+    }
+    public void updateTask(int id, String name){
+        Todo todo = taskRepo.findById(id);
+
+        if (todo == null){
+            throw new IndexOutOfBoundsException();
+        }
+
+        todo.setName(name);
+        taskRepo.save(todo.asDone());
     }
 }

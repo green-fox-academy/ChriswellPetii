@@ -56,6 +56,20 @@ public class TodoApp {
             return;
         }
 
+        if (args[0].equals("-u")) {
+            if (args.length < 3) {
+                System.out.println("Unable to update: no index provided or no new description added");
+                return;
+            }
+
+            try {
+                taskOperations.updateTask(Integer.parseInt(args[1]), args[2]);
+            } catch (NumberFormatException e) {
+                System.out.println("Unable to remove: index is not number");
+            }
+            return;
+        }
+
         System.out.println("Unsupported argument");
     }
 

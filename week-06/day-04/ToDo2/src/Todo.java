@@ -8,7 +8,7 @@ import static java.time.ZoneOffset.UTC;
 
 public class Todo {
     private final long id;
-    private final String name;
+    private String name;
     private final boolean isDone;
     private LocalDateTime createdAt;
     private LocalDateTime completedAt;
@@ -23,6 +23,7 @@ public class Todo {
         this.name = name;
         this.isDone = isDone;
         this.createdAt = LocalDateTime.now(Clock.system(UTC));
+        this.completedAt = LocalDateTime.now(Clock.system(UTC));
     }
 
     public Todo(long id, String name, boolean isDone, LocalDateTime completedAt) {
@@ -49,7 +50,8 @@ public class Todo {
     }
 
     public Todo asDone() {
-        return new Todo(id, name, true, createdAt);
+        LocalDateTime completedAtAsDone = LocalDateTime.now(Clock.system(UTC));
+        return new Todo(id, name, true, createdAt, completedAtAsDone);
     }
 
     public Todo withId(long id) {
@@ -66,7 +68,12 @@ public class Todo {
 
     @Override
     public String toString() {
-        return String.format("%s - [%s] '%s' %s", id, labelIfDone(), name, completionTime(createdAt, completedAt));
+        Duration duration = Duration.between(createdAt, completedAt);
+        if (duration.getSeconds() != 0) {
+            return String.format("%s - [%s] '%s' %s", id, labelIfDone(), name, completionTime(createdAt, completedAt));
+        } else {
+            return String.format("%s - [%s] '%s'", id, labelIfDone(), name);
+        }
     }
 
     @Override
@@ -83,14 +90,22 @@ public class Todo {
     }
 
     public String completionTime(LocalDateTime createdAt, LocalDateTime completedAt) {
-        Duration duration = Duration.between(createdAt, completedAt);
-        long absSeconds = Math.abs(duration.getSeconds());
-        long hour = absSeconds / 3600;
-        long min = (absSeconds % 3600) / 60;
-        long day = hour / 24;
+        Duration diff = Duration.between(createdAt, completedAt);
+        long diffSec = Math.abs(diff.getSeconds());
+        long sec = 1;
+        long min = sec * 60;
+        long hour = min * 60;
+        long day = hour * 24;
 
-//        "%d:%02d:%02d", absSeconds / 3600, (absSeconds % 3600) / 60, absSeconds % 60);
-        String durattion = day + " days, " + hour + " hours, " + min + " minutes";
+        long days = diffSec / day;
+        diffSec = diffSec % day;
+        long hours = diffSec / hour;
+        diffSec = diffSec % hour;
+        long mins = diffSec / min;
+        diffSec = diffSec % min;
+        long secs = diffSec / sec;
+
+        String durattion = days + " days, " + hours + " hours, " + mins + " minutes " + secs + " seconds";
         return durattion;
     }
 
@@ -104,5 +119,13 @@ public class Todo {
 
     public void setCompletedAt(LocalDateTime time) {
         this.completedAt = time;
+    }
+
+    public void setCreatedAt(LocalDateTime time) {
+        this.createdAt = time;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
