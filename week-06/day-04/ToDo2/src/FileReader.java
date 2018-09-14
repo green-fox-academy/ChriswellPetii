@@ -25,6 +25,7 @@ public class FileReader {
             }
 
             return todos;
+
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -35,7 +35,6 @@ public class Todo {
         this(id, name, isDone);
         this.createdAt = createdAt;
         this.completedAt = completedAt;
-
     }
 
     private String labelIfDone() {
@@ -58,37 +57,6 @@ public class Todo {
         return new Todo(id, name, isDone);
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
-        Duration duration = Duration.between(createdAt, completedAt);
-        if (duration.getSeconds() != 0) {
-            return String.format("%s - [%s] '%s' %s", id, labelIfDone(), name, completionTime(createdAt, completedAt));
-        } else {
-            return String.format("%s - [%s] '%s'", id, labelIfDone(), name);
-        }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Todo todo = (Todo) o;
-        return id == todo.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
     public String completionTime(LocalDateTime createdAt, LocalDateTime completedAt) {
         Duration diff = Duration.between(createdAt, completedAt);
         long diffSec = Math.abs(diff.getSeconds());
@@ -105,8 +73,15 @@ public class Todo {
         diffSec = diffSec % min;
         long secs = diffSec / sec;
 
-        String durattion = days + " days, " + hours + " hours, " + mins + " minutes " + secs + " seconds";
-        return durattion;
+        return days + " days, " + hours + " hours, " + mins + " minutes " + secs + " seconds";
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     LocalDateTime getCreatedAt() {
@@ -127,5 +102,28 @@ public class Todo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Todo todo = (Todo) o;
+        return id == todo.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        Duration duration = Duration.between(createdAt, completedAt);
+        if (duration.getSeconds() != 0) {
+            return String.format("%s - [%s] '%s' %s", id, labelIfDone(), name, completionTime(createdAt, completedAt));
+        } else {
+            return String.format("%s - [%s] '%s'", id, labelIfDone(), name);
+        }
     }
 }

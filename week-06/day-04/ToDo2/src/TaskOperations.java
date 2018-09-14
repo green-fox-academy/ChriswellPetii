@@ -16,10 +16,10 @@ public class TaskOperations {
     public void doneTodo(int id) {
         Todo todo = taskRepo.findById(id);
 
-
         if (todo == null) {
             throw new IndexOutOfBoundsException();
         }
+
         taskRepo.save(todo.asDone());
     }
 
@@ -37,10 +37,11 @@ public class TaskOperations {
             System.out.println(todo);
         }
     }
-    public void updateTask(int id, String name){
+
+    public void updateTask(int id, String name) {
         Todo todo = taskRepo.findById(id);
 
-        if (todo == null){
+        if (todo == null) {
             throw new IndexOutOfBoundsException();
         }
 

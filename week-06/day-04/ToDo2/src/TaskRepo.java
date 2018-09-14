@@ -39,15 +39,12 @@ public class TaskRepo {
     public void save(Todo todo) {
         List<Todo> todos = findAll();
         LocalDateTime currentCreatedAt;
-        LocalDateTime currentCompletedAt;
         for (int i = 0; i < todos.size(); i++) {
             if (todos.get(i).equals(todo)) {
                 currentCreatedAt = todos.get(i).getCreatedAt();
-//                currentCompletedAt = todos.get(i).getCompletedAt();
                 todos.remove(i);
                 todos.add(i, todo);
                 todos.get(i).setCreatedAt(currentCreatedAt);
-//                todos.get(i).setCompletedAt(currentCompletedAt);
             }
         }
 
