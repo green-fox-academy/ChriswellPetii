@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloRESTController {
     @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam("name") String name) {
+    public String greeting(@RequestParam("name") String name) {
         Greeting greeting = new Greeting("Hello " + name + "!");
-        return greeting;
+        return greeting.getContent() + " This site was loaded " + greeting.getId() + " times since last server start.";
     }
 }
