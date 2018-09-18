@@ -12,16 +12,22 @@ public class BankAccount {
     private long balance;
     private String animalType;
     private String currency = "dollarka";
+    private boolean king;
 
-    public BankAccount(String name, long balance, String animalType) {
+    public BankAccount(String name, long balance, String animalType, boolean king) {
         this.id = ID();
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
+        this.king = king;
     }
 
     public long getId() {
         return id;
+    }
+
+    public boolean getKing() {
+        return king;
     }
 
     public String getCurrency() {

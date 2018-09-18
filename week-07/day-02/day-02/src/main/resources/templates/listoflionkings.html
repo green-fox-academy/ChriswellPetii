@@ -9,18 +9,26 @@
 <table>
     <thead>
     <tr>
-        <th colspan="4">
+        <th colspan="5">
             Accounts of Simba's Bank
         </th>
     </tr>
     </thead>
     <tbody>
     <th:block th:each="element : ${balist}">
-        <tr>
+        <tr th:if="${element.getKing()}" class="king">
             <td th:text="${element.getId()}"></td>
             <td th:text="${element.getName()}"></td>
             <td th:text="${element.getAnimalType()}"></td>
             <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
+            <td>Im the king</td>
+        </tr>
+        <tr th:unless="${element.getKing()}">
+            <td th:text="${element.getId()}"></td>
+            <td th:text="${element.getName()}"></td>
+            <td th:text="${element.getAnimalType()}"></td>
+            <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
+            <td>Im not the king</td>
         </tr>
     </th:block>
     </tbody>
