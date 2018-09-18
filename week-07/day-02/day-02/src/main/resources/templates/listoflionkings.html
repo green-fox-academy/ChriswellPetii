@@ -6,10 +6,22 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<p>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Accounts of Simba's Bank
+        </th>
+    </tr>
+    </thead>
+    <tbody>
     <th:block th:each="element : ${balist}">
-        <li th:text="${element.toString()}"></li>
+        <tr>
+            <td th:text="${element.toString()}"></td>
+        </tr>
+        </tr>
     </th:block>
-</p>
+    </tbody>
+</table>
 </body>
 </html>
