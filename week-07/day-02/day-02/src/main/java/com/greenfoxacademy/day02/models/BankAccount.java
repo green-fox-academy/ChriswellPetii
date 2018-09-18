@@ -1,9 +1,14 @@
 package com.greenfoxacademy.day02.models;
 
+import java.text.DecimalFormat;
+
 public class BankAccount {
+    private static DecimalFormat df2 = new DecimalFormat("#.00");
+
     private String name;
     private long balance;
     private String animalType;
+    private String currency = "dollarka";
 
     public BankAccount(String name, long balance, String animalType) {
         this.name = name;
@@ -37,6 +42,6 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        return this.name + " " + this.animalType + " " + this.balance;
+        return this.name + " " + this.animalType + " " + String.format("%s %s", df2.format(this.balance), currency);
     }
 }
