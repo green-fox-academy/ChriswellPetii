@@ -9,7 +9,7 @@
 <table>
     <thead>
     <tr>
-        <th colspan="5">
+        <th colspan="6">
             Accounts of Simba's Bank
         </th>
     </tr>
@@ -22,6 +22,7 @@
             <td th:text="${element.getAnimalType()}"></td>
             <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
             <td>Im the king</td>
+            <td th:text="${element.getSide()}"></td>
         </tr>
         <tr th:unless="${element.getKing()}">
             <td th:text="${element.getId()}"></td>
@@ -29,6 +30,7 @@
             <td th:text="${element.getAnimalType()}"></td>
             <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
             <td>Im not the king</td>
+            <td th:text="${element.getSide()}"></td>
         </tr>
     </th:block>
     </tbody>

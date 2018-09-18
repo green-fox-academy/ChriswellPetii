@@ -13,13 +13,23 @@ public class BankAccount {
     private String animalType;
     private String currency = "dollarka";
     private boolean king;
+    private String side;
 
-    public BankAccount(String name, long balance, String animalType, boolean king) {
+    public BankAccount(String name, long balance, String animalType, boolean king, boolean good) {
         this.id = ID();
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.king = king;
+        if (good) {
+            this.side = "Good one";
+        } else {
+            this.side = "Bad guy";
+        }
+    }
+
+    public String getSide() {
+        return side;
     }
 
     public long getId() {

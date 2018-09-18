@@ -14,7 +14,7 @@ public class BankAccountController {
 
     @RequestMapping("/show")
     public String account(Model model) {
-        model.addAttribute("account", new BankAccount("Nala", 2000, "lion", false));
+        model.addAttribute("account", new BankAccount("Nala", 2000, "lion", false,true));
         return "index";
     }
 
@@ -26,11 +26,11 @@ public class BankAccountController {
 
     @RequestMapping("/lolk")
     public String valami(Model model) {
-        bankAccountList.add(new BankAccount("Simba", 2500, "lion", true));
-        bankAccountList.add(new BankAccount("Timon", 300, "meerkat", false));
-        bankAccountList.add(new BankAccount("Pumba", 50, "warthog", false));
-        bankAccountList.add(new BankAccount("Scar", 2250, "lion", false));
-        bankAccountList.add(new BankAccount("Mufasa", 50, "lion", false));
+        bankAccountList.add(new BankAccount("Simba", 2500, "lion", true, true));
+        bankAccountList.add(new BankAccount("Timon", 300, "meerkat", false,true));
+        bankAccountList.add(new BankAccount("Pumba", 50, "warthog", false,true));
+        bankAccountList.add(new BankAccount("Scar", 2250, "lion", false,false));
+        bankAccountList.add(new BankAccount("Mufasa", 50, "lion", false,true));
         model.addAttribute("balist", bankAccountList);
         return "listoflionkings";
     }
