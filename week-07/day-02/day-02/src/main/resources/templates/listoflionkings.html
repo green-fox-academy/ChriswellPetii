@@ -5,35 +5,49 @@
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <meta charset="utf-8"/>
 </head>
-<body>
-<table>
-    <thead>
-    <tr>
-        <th colspan="6">
-            Accounts of Simba's Bank
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <th:block th:each="element : ${balist}">
-        <tr th:if="${element.getKing()}" class="king">
-            <td th:text="${element.getId()}"></td>
-            <td th:text="${element.getName()}"></td>
-            <td th:text="${element.getAnimalType()}"></td>
-            <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
-            <td>Im the king</td>
-            <td th:text="${element.getSide()}"></td>
+<form action="/lolk" method="post">
+    <body>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="6">
+                Accounts of Simba's Bank
+            </th>
         </tr>
-        <tr th:unless="${element.getKing()}">
-            <td th:text="${element.getId()}"></td>
-            <td th:text="${element.getName()}"></td>
-            <td th:text="${element.getAnimalType()}"></td>
-            <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
-            <td>Im not the king</td>
-            <td th:text="${element.getSide()}"></td>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Race</td>
+            <td>Balance</td>
+            <td>State</td>
+            <td>Good or bad</td>
+
         </tr>
-    </th:block>
-    </tbody>
-</table>
-</body>
+        </thead>
+        <tbody>
+        <th:block th:each="element : ${balist}">
+            <tr th:if="${element.getKing()}" class="king">
+                <td th:text="${element.getId()}"></td>
+                <td th:text="${element.getName()}"></td>
+                <td th:text="${element.getAnimalType()}"></td>
+                <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
+                <td>Im the king</td>
+                <td th:text="${element.getSide()}"></td>
+            </tr>
+            <tr th:unless="${element.getKing()}">
+                <td th:text="${element.getId()}"></td>
+                <td th:text="${element.getName()}"></td>
+                <td th:text="${element.getAnimalType()}"></td>
+                <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
+                <td>Im not the king</td>
+                <td th:text="${element.getSide()}"></td>
+            </tr>
+        </th:block>
+        <input type="text" placeholder="Name" name="Name" required>
+        <input type="number" min="0" step="1" name="Amount" placeholder="Amount" required>
+        <button type="submit"></button>
+        </tbody>
+    </table>
+    </body>
+</form>
 </html>
