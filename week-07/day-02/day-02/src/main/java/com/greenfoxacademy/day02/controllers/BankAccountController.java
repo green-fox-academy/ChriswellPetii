@@ -12,4 +12,10 @@ public class BankAccountController {
         model.addAttribute("account", new BankAccount("Simba", 2000, "lion"));
         return "index";
     }
+
+    @RequestMapping("/point")
+    public String endPointing(Model model) {
+        model.addAttribute("string", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+        return "endpoint";
+    }
 }
