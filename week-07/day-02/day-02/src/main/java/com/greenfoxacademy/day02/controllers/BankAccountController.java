@@ -10,7 +10,7 @@ import java.util.List;
 
 @Controller
 public class BankAccountController {
-    List<BankAccount> bankAccountList = new ArrayList<>();
+    public static List<BankAccount> bankAccountList = new ArrayList<>();
 
     @RequestMapping("/show")
     public String account(Model model) {

@@ -9,7 +9,7 @@
 <table>
     <thead>
     <tr>
-        <th>
+        <th colspan="4">
             Accounts of Simba's Bank
         </th>
     </tr>
@@ -17,8 +17,10 @@
     <tbody>
     <th:block th:each="element : ${balist}">
         <tr>
-            <td th:text="${element.toString()}"></td>
-        </tr>
+            <td th:text="${element.getId()}"></td>
+            <td th:text="${element.getName()}"></td>
+            <td th:text="${element.getAnimalType()}"></td>
+            <td th:text="|${element.getBalance()} ${element.getCurrency()}|"></td>
         </tr>
     </th:block>
     </tbody>
