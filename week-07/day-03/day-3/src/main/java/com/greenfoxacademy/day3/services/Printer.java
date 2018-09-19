@@ -1,6 +1,5 @@
-package com.greenfoxacademy.day3.models;
+package com.greenfoxacademy.day3.services;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
