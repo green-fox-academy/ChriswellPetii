@@ -20,6 +20,21 @@ public class UtilityService {
         random = new Random();
     }
 
+    public String validateEmail(String info) {
+        if (info.contains("@") && info.contains(".")) {
+            return info + " is a valid email address";
+        }
+        return info + " is not valid email address";
+    }
+
+    public boolean validateEmailBool(String info) {
+        if (info.contains("@") && info.contains(".")) {
+            return true;
+        }
+        return false;
+    }
+
+
     public String randomColor() {
         return colors.get(random.nextInt(colors.size()));
     }
