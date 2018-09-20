@@ -13,10 +13,15 @@
     <img src="https://raw.githubusercontent.com/green-fox-academy/teaching-materials/master/project/programmer-fox-club/assets/greenfox.png?token=AP5Io4HqfuRMI92rhBTNl5mvSIloSTWzks5brI10wA%3D%3D">
 </div>
 <div>
-    <a>This is Mr.Fox. Currently living on pizza and lemonade. He knows 2 tricks</a>
+    <p th:text="${statusbar}"></p>
 </div>
 <div>
-    <a>Known tricks</a>
+    <p>Known tricks</p>
+</div>
+<div>
+    <ul th:each="trick : ${knowedtricks}">
+        <li th:text="${trick}"></li>
+    </ul>
 </div>
 </body>
 </html>
