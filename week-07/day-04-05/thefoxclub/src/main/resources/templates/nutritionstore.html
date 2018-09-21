@@ -6,31 +6,34 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<div>
-    <a th:href="@{/?name=} + ${fox.getName()}">Information</a>
-    <a th:href="@{/nutritionstore?name=} + ${fox.getName()}">Nutrition Store</a>
-    <a th:href="@{/trickcenter?name=} + ${fox.getName()}">Trick Center</a>
-</div>
-<div>
-    <p>Select your favorite food and drink</p>
-</div>
-<div>
-    <form method="POST" th:action="@{/setNutri?name=} + ${fox.getName()}" th:object="${fox}">
 
-        <label for="food"></label>
-        <select th:field="*{food}">
-            <option th:each="food : ${foodlist}" th:value="${food}">
-                <span th:text="${food}"></span>
-            </option>
-        </select>
-        <label for="drink"></label>
-        <select th:field="*{drink}">
-            <option th:each="drink : ${drinklist}" th:value="${drink}">
-                <span th:text="${drink}"></span>
-            </option>
-        </select>
-        <button type="submit">Change</button>
-    </form>
+<div class="login">
+    <a class="link" th:href="@{/?name=} + ${fox.getName()}">Information</a>
+    <a class="link" th:href="@{/nutritionstore?name=} + ${fox.getName()}">Nutrition Store</a>
+    <a class="link" th:href="@{/trickcenter?name=} + ${fox.getName()}">Trick Center</a>
+    <div>
+        <h1 th:text="${fox.getName()}"></h1>
+        <img src="/greenfox.png">
+        <h2>Select your favorite food and drink</h2>
+    </div>
+    <div>
+        <form method="POST" th:action="@{/setNutri?name=} + ${fox.getName()}" th:object="${fox}">
+
+            <label for="food"></label>
+            <select th:field="*{food}">
+                <option th:each="food : ${foodlist}" th:value="${food}">
+                    <span th:text="${food}"></span>
+                </option>
+            </select>
+            <label for="drink"></label>
+            <select th:field="*{drink}">
+                <option th:each="drink : ${drinklist}" th:value="${drink}">
+                    <span th:text="${drink}"></span>
+                </option>
+            </select>
+            <button type="submit">Change</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

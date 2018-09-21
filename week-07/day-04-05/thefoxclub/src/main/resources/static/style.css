@@ -1,0 +1,74 @@
+html {
+    background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_embroidery.png);
+    font-family: 'Helvetica Neue', Arial, SansSerif;
+}
+
+.login {
+    text-align: center;
+    background: #ecf0f1;
+    position: relative;
+    margin: 0 auto;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333333;
+    padding: 15px;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2em;
+    margin-top: 10px;
+    color: #34495e;
+    font-size: 12pt;
+}
+
+.form {
+
+    text-align: center;
+    padding-top: 20px;
+}
+
+input[type="text"],
+button {
+    width: 80%;
+    margin-bottom: 25px;
+    height: 40px;
+    border-radius: 5px;
+    outline: 0;
+}
+
+input[type="text"] {
+    border: 1px solid #bbb;
+    font-size: 22px;
+}
+
+button, .link {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+select {
+    margin-bottom: 20px
+}
+
+.tricks {
+    text-align: left;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.link {
+    border-style: hidden;
+    border-radius: 7px;
+    color:black;
+    font-weight: 550;
+}
+
+

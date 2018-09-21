@@ -6,25 +6,26 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<div>
-    <a th:href="@{/?name=} + ${name}">Information</a>
-    <a th:href="@{/nutritionstore?name=} + ${name}">Nutrition Store</a>
-    <a th:href="@{/trickcenter?name=} + ${name}">Trick Center</a>
-</div>
-<div>
-    <p>Select your new Trick</p>
-</div>
-<div>
-    <form method="POST" th:action="@{/setTrick?name=} + ${fox.getName()}">
-
-        <label for="trick"></label>
-        <select name="trickforset">
-            <option th:each="trick : ${tricklist}" th:value="${trick}">
-                <span th:text="${trick}"></span>
-            </option>
-        </select>
-        <button type="submit">Learn</button>
-    </form>
+<div class="login">
+    <a class="link" th:href="@{/?name=} + ${fox.getName()}">Information</a>
+    <a class="link" th:href="@{/nutritionstore?name=} + ${fox.getName()}">Nutrition Store</a>
+    <a class="link" th:href="@{/trickcenter?name=} + ${fox.getName()}">Trick Center</a>
+    <div>
+        <h1 th:text="${fox.getName()}"></h1>
+        <img src="/greenfox.png">
+        <h2>Select your new Trick</h2>
+    </div>
+    <div>
+        <form method="POST" th:action="@{/setTrick?name=} + ${fox.getName()}">
+            <label for="trick"></label>
+            <select name="trickforset">
+                <option th:each="trick : ${tricklist}" th:value="${trick}">
+                    <span th:text="${trick}"></span>
+                </option>
+            </select>
+            <button type="submit">Learn</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

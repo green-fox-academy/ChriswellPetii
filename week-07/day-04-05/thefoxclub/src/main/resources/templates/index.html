@@ -6,22 +6,23 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<a th:href="@{/?name=} + ${name}">Information</a>
-<a th:href="@{/nutritionstore?name=} + ${name}">Nutrition Store</a>
-<a th:href="@{/trickcenter?name=} + ${name}">Trick Center</a>
-<div>
-    <img src="https://raw.githubusercontent.com/green-fox-academy/teaching-materials/master/project/programmer-fox-club/assets/greenfox.png?token=AP5Io4HqfuRMI92rhBTNl5mvSIloSTWzks5brI10wA%3D%3D">
-</div>
-<div>
-    <p th:text="${statusbar}"></p>
-</div>
-<div>
-    <p>Known tricks</p>
-</div>
-<div>
-    <ul th:each="trick : ${knowedtricks}">
-        <li th:text="${trick}"></li>
-    </ul>
+<div class="login">
+    <a class="link" th:href="@{/?name=} + ${name}">Information</a>
+    <a class="link" th:href="@{/nutritionstore?name=} + ${name}">Nutrition Store</a>
+    <a class="link" th:href="@{/trickcenter?name=} + ${name}">Trick Center</a>
+    <h1 th:text="${name}"></h1>
+    <img src="/greenfox.png">
+    <div>
+        <p th:text="${statusbar}"></p>
+    </div>
+    <div>
+        <p class="status">Known tricks</p>
+    </div>
+    <div class="tricks">
+        <ul th:each="trick : ${knowedtricks}">
+            <li th:text="${trick}"></li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
