@@ -6,7 +6,7 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<a href="">Information</a>
+<a th:href="@{/?name=} + ${name}">Information</a>
 <a th:href="@{/nutritionstore?name=} + ${name}">Nutrition Store</a>
 <a th:href="@{/trickcenter?name=} + ${name}">Trick Center</a>
 <div>

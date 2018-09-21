@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf Exercise #</title>
+    <title>Nutrition Store</title>
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <meta charset="utf-8"/>
 </head>
 <body>
+<div>
+    <a th:href="@{/?name=} + ${fox.getName()}">Information</a>
+    <a th:href="@{/nutritionstore?name=} + ${fox.getName()}">Nutrition Store</a>
+    <a th:href="@{/trickcenter?name=} + ${fox.getName()}">Trick Center</a>
+</div>
 <div>
     <p>Select your favorite food and drink</p>
 </div>

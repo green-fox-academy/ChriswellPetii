@@ -1,15 +1,12 @@
 package com.greefoxacademy.helloworld.controllers;
 
 import com.greefoxacademy.helloworld.AtomicLong;
-import com.greefoxacademy.helloworld.Greeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Random;
-
-import static com.greefoxacademy.helloworld.AtomicLong.lastID;
 
 @Controller
 public class HelloWebController {

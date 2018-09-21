@@ -21,9 +21,6 @@ public class CharactersService {
         return findFoxByName(name);
     }
 
-    public void update() {
-    }
-
     public Fox findFoxByName(String name) {
         for (Fox aFoxList : foxList) {
             if (aFoxList.getName().equals(name)) {
