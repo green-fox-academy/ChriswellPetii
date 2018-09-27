@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>ToDo List</title>
+    <title>Assignees List</title>
     <!--<link rel="stylesheet" th:href="@{/style.css}"/>-->
     <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
@@ -27,42 +27,19 @@
         <thead>
         <tr>
             <td>ID</td>
-            <td>ACTION</td>
-            <td>DONE</td>
-            <td>URGENT</td>
-            <td>DELETE</td>
-            <td>UPDATE</td>
+            <td>NAME</td>
+            <td>EMAIL</td>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="todo : ${todos}">
-            <td th:text="${todo.id}"></td>
-            <td th:text="${todo.name}"></td>
-            <td th:if="${todo.done}">
-                <form th:action="@{'/' + ${todo.id} + '/updatedone'}">
-                    <button type="submit" class="glyphicon glyphicon-ok"></button>
-                </form>
-            </td>
-            <td th:if="${!todo.done}">
-                <form th:action="@{'/' + ${todo.id} + '/updatedone'}">
-                    <button type="submit" class="glyphicon glyphicon-remove"></button>
-                </form>
-            </td>
-            <td th:if="${todo.urgent}">
-                <form th:action="@{'/' + ${todo.id} + '/updateurgent'}">
-                    <button type="submit" class="glyphicon glyphicon-ok"></button>
-                </form>
-            </td>
-            <td th:if="${!todo.urgent}">
-                <form th:action="@{'/' + ${todo.id} + '/updateurgent'}">
-                    <button type="submit" class="glyphicon glyphicon-remove"></button>
-                </form>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td>
+                <a class="btn btn-danger btn-sm" th:href="@{'/' + ${user.id} + '/deleteuser'}">Delete</a>
             </td>
             <td>
-                <a class="btn btn-danger btn-sm" th:href="@{'/' + ${todo.id} + '/delete'}">Delete</a>
-            </td>
-            <td>
-                <a class="btn btn-danger btn-sm" th:href="@{'/' + ${todo.id} + '/update'}">Update</a>
+                <a class="btn btn-danger btn-sm" th:href="@{'/' + ${user.id} + '/updateuser'}">Update</a>
             </td>
         </tr>
         </tbody>

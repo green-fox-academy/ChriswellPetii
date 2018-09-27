@@ -5,8 +5,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface TodoRepository extends CrudRepository<Todo, Long> {
-    Iterable<Todo> findAllByName(String name);
+public interface TodoServices extends CrudRepository<Todo, Long> {
 
-    Optional<Todo> findByName(String name);
+    Todo findByName(String name);
+
+    Iterable<Todo> findAllByName(String name);
 }

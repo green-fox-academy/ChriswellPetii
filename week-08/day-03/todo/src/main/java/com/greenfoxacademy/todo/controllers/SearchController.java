@@ -1,7 +1,7 @@
 package com.greenfoxacademy.todo.controllers;
 
-import com.greenfoxacademy.todo.interfaces.TodoRepository;
 import com.greenfoxacademy.todo.models.Todo;
+import com.greenfoxacademy.todo.services.TodoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SearchController {
-    private TodoRepository todoRepository;
+    private TodoService todoService;
 
-    public SearchController(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
+    public SearchController(TodoService todoService) {
+        this.todoService = todoService;
     }
 
     @PostMapping("/search")
     public String searchPost(String name) {
-        Todo todo = todoRepository.findByName(name).get();
+        Todo todo = todoService.findByName(name);
         return "redirect:/search?name=" + todo.getName();
     }
 
     @GetMapping("/search")
     public String searchGet(@RequestParam("name") String name, Model model) {
-        model.addAttribute("name",todoRepository.findByName(name));
-        model.addAttribute("todos", todoRepository.findAllByName(name));
+        model.addAttribute("name",todoService.findByName(name));
+        model.addAttribute("todos", todoService.findAllByName(name));
         return "todolist";
     }
 }

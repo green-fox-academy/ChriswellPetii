@@ -1,12 +1,7 @@
 package com.greenfoxacademy.todo.models;
 
-import com.greenfoxacademy.todo.interfaces.TodoRepository;
-import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Todo {
@@ -17,13 +12,17 @@ public class Todo {
     private boolean urgent;
     private boolean done;
 
-    public Todo() {
-    }
+    @ManyToOne
+    private Assignee assignee;
 
-    public Todo(String name) {
+    public Todo(String name, Assignee assignee) {
         this.name = name;
         this.urgent = false;
         this.done = false;
+        this.assignee = assignee;
+    }
+
+    public Todo() {
     }
 
     public long getId() {

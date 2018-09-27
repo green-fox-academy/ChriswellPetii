@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Update your Todo</title>
+    <title>ToDo List</title>
     <!--<link rel="stylesheet" th:href="@{/style.css}"/>-->
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
-    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </head>
-<body class="jumbotron text-center">
 <h1 class="h1">Add new Todo to list</h1>
+<body class="jumbotron text-center">
 <div class="container">
+    <h1 class="h1">Todos for today:</h1>
     <a class="btn btn-warning" href="/add">Add new Todo</a>
-    <a class="btn btn-link" href="/">Back to the List</a>
-    <a class="btn btn-link" href="/todo?isActive=false">Show Done Todo's</a>
-    <a class="btn btn-link" href="/todo?isActive=true">Show Active Todo's</a>
+    <a class="btn btn-link btn-sm" href="/">Back to the List</a>
+    <a class="btn btn-link btn-sm" href="/todo?isActive=false">Show Done Todo's</a>
+    <a class="btn btn-link btn-sm" href="/todo?isActive=true">Show Active Todo's</a>
+    <a class="btn btn-link btn-sm" href="/assignees">List of Assignees</a>
 </div>
 <form class="form-inline" th:action="@{'/' + ${todo.getId()} + '/update'}" method="post">
     <div class="form-group">
-        <label for="name">Todo Description</label>
+        <label for="username">Todo Description</label>
         <input class="form-control" type="text" name="name" th:value="${name}" id="name">
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" type="text" name="username" th:value="${username}" id="username">
+    </div>
+    <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input class="form-control" type="text" name="email" th:value="${email}" id="email">
     </div>
     <div class="checkbox">
         <label for="isDone">Done</label>
