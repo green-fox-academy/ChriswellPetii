@@ -22,7 +22,7 @@ public class UpdateController {
 
     @GetMapping("/{id}/update")
     public String getUpdate(@PathVariable Long id, Model model) {
-        Todo todo = todoServices.findById(id).get()
+        Todo todo = todoServices.findById(id).get();
         model.addAttribute("name", todo.getName());
         model.addAttribute("isDone", todo.isDone());
         model.addAttribute("isUrgent", todo.isUrgent());
