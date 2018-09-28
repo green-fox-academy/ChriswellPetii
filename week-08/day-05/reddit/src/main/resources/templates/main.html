@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reddit</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<div><a href="/submit">Submit new Post</a></div>
+<div class="centerred"><h1>Trending posts</h1></div>
+<div class="centerred">
+    <table class="centerred">
+        <tbody>
+        <tr>
+            <td class="centerred">Score</td>
+            <td class="centerred">Up vote</td>
+            <td class="centerred">Down vote</td>
+            <td class="centerred">Content</td>
+        </tr>
+        <tr th:each="post : ${posts}">
+            <td class="centerred"><p th:text="${post.score}"></p></td>
+            <td class="centerred"><a th:href="@{'/' + ${post.id} + '/upvote'}">+</a></td>
+            <td class="centerred"><a th:href="@{'/' + ${post.id} + '/downvote'}">-</a></td>
+            <td class="centerred"><a  target="_blank" rel="noopener noreferrer" th:text="${post.content}" th:href="${post.url}"></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
