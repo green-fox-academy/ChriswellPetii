@@ -1,9 +1,18 @@
 package com.greenfoxacademy.reddit.model;
 
+import org.springframework.format.datetime.DateFormatter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.text.DateFormat;
+import java.time.Clock;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
+import static java.time.ZoneOffset.UTC;
 
 @Entity
 public class Post {
@@ -13,14 +22,29 @@ public class Post {
     private String content;
     private String url;
     private long score;
+    private LocalDateTime createdAt;
 
     public Post(String content, String url) {
         this.content = content;
         this.url = url;
         this.score = 0;
+        this.createdAt = LocalDateTime.now(ZoneId.of("UTC+2"));
     }
 
     public Post() {
+    }
+
+    public String getTimeInFormat() {
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return getCreatedAt().format(dateFormatter);
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     public long getId() {
