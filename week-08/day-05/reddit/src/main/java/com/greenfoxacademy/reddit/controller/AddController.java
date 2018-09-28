@@ -1,15 +1,15 @@
 package com.greenfoxacademy.reddit.controller;
 
-import com.greenfoxacademy.reddit.service.PostServiceImpl;
+import com.greenfoxacademy.reddit.service.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AddController {
-    private PostServiceImpl postService;
+    private PostService postService;
 
-    public AddController(PostServiceImpl postService) {
+    public AddController(PostService postService) {
         this.postService = postService;
     }
 

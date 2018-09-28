@@ -10,4 +10,8 @@ public interface PostService {
     Iterable<Post> findAll();
 
     Post findById(long id);
+
+    void upVote(long id);
+
+    void downVote(long id);
 }
