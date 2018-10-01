@@ -1,10 +1,7 @@
 package com.greenfoxacademy.demo.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -34,6 +31,28 @@ public class MainController {
         }
         Greeter greeter = new Greeter(name, title);
         return greeter;
+    }
+
+    @GetMapping("/appenda/{appended}")
+    @ResponseBody
+    public AppendA getAppendA(@PathVariable String appended) {
+        if (appended == null) {
+            return new AppendA();
+        }
+        return new AppendA(appended);
+    }
+
+    static class AppendA {
+        public String appended;
+        public String error;
+
+        public AppendA(String appended) {
+            this.appended = appended + "a";
+        }
+
+        public AppendA() {
+            this.error = "Please provide appandable!";
+        }
     }
 
     static class Double {
