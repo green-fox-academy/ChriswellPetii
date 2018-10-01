@@ -42,6 +42,62 @@ public class MainController {
         return new AppendA(appended);
     }
 
+    @PostMapping("/dountil/{action}")
+    @ResponseBody
+    public DoUntilOut doMath(@PathVariable String action, @RequestBody(required = false) DoUntil doUntil) {
+        if (action == null || doUntil == null) {
+            return new DoUntilOut("error");
+        }
+//        if (doUntil == null) {
+//            return new DoUntilOut("error");
+//        }
+
+        DoUntilOut doUntilOut = new DoUntilOut();
+
+        if (action.equals("sum")) {
+            int sum = 0;
+            for (int i = 1; i <= doUntil.until; i++) {
+                sum += i;
+            }
+            doUntilOut.result = sum;
+            return doUntilOut;
+        }
+        if (action.equals("factor")) {
+            int fact = 1;
+            for (int i = 1; i <= doUntil.until; i++) {
+                fact *= i;
+            }
+            doUntilOut.result = fact;
+            return doUntilOut;
+        }
+        return doUntilOut;
+    }
+
+    static class DoUntil {
+        public Integer until;
+
+        public DoUntil(String action, Integer until) {
+            this.until = until;
+        }
+
+        public DoUntil() {
+        }
+
+    }
+
+    static class DoUntilOut {
+        public Integer result;
+        public String error;
+
+        public DoUntilOut() {
+
+        }
+
+        public DoUntilOut(String string) {
+            this.error = "Please provide a number!";
+        }
+    }
+
     static class AppendA {
         public String appended;
         public String error;
