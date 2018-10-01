@@ -26,6 +26,16 @@ public class MainController {
 
     }
 
+    @GetMapping("/greeter")
+    @ResponseBody
+    public Greeter getGreeter(@RequestParam(required = false) String name, @RequestParam(required = false) String title) {
+        if (name == null || title == null) {
+            Greeter greeter = new Greeter("Error");
+        }
+        Greeter greeter = new Greeter(name, title);
+        return greeter;
+    }
+
     static class Double {
         public Integer received;
         public Integer result;
@@ -39,6 +49,20 @@ public class MainController {
 
         public Double(String error) {
             this.error = "Please provide an input!";
+        }
+    }
+
+    static class Greeter {
+        public String welcome_message;
+        public String error;
+
+        public Greeter(String name, String title) {
+            this.welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";
+            this.error = null;
+        }
+
+        public Greeter(String error) {
+            this.error = "Please provide a name";
         }
     }
 }
