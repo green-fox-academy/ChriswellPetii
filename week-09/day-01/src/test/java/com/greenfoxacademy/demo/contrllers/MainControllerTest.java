@@ -53,4 +53,12 @@ public class MainControllerTest {
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("result").value(4));
     }
+
+    @Test
+    public void testGreeter() throws Exception{
+        mockMvc.perform(get("/greeter?name=Peter&title=SuperSaiyanGod"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andExpect(jsonPath("welcome_message").value("Oh, hi there Peter, my dear SuperSaiyanGod!"));
+    }
 }
