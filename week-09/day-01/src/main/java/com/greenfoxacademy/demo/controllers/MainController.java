@@ -48,9 +48,6 @@ public class MainController {
         if (action == null || doUntil == null) {
             return new DoUntilOut("error");
         }
-//        if (doUntil == null) {
-//            return new DoUntilOut("error");
-//        }
 
         DoUntilOut doUntilOut = new DoUntilOut();
 
