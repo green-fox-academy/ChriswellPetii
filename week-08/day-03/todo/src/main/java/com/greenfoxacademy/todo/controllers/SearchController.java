@@ -19,6 +19,9 @@ public class SearchController {
     @PostMapping("/search")
     public String searchPost(String name) {
         Todo todo = todoService.findByName(name);
+        if (todo == null || name == null){
+            return "redirect:/";
+        }
         return "redirect:/search?name=" + todo.getName();
     }
 
